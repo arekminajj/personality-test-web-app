@@ -1,3 +1,4 @@
+export default TestQuestions =
 [
   {
     "id": 1,
@@ -238,8 +239,7 @@
       "a": {"text": "Rzadko podlega wątpliwościom", "type": "S"},
       "b": {"text": "Często podlega wątpliwościom", "type": "N"}
     }
-  }
-
+  },
   {
     "id": 31,
     "question": "Dzieci często nie:",
@@ -479,7 +479,7 @@
       "a": {"text": "Być zbyt pasjonatem", "type": "F"},
       "b": {"text": "Być zbyt obiektywnym", "type": "T"}
     }
-  }
+  },
   {
     "id": 61,
     "question": "Czy widzisz siebie jako osobę zasadniczą czy:",
@@ -561,5 +561,3 @@
     }
   }
 ]
-
-
