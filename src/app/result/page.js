@@ -36,8 +36,6 @@ export default function ResultPage() {
         const res = await fetch(`/api/quiz?id=${testId}`);
         const json = await res.json();
 
-        console.log(json)
-
         if (json.data) {
           setData(json.data);
           setResultType(calculateResult(json.data.answers));
