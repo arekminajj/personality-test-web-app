@@ -2,9 +2,11 @@
 import { useState } from "react";
 import Question from "./ui/MBTIquestion";
 import TestQuestions from "../../data/TestQuestions";
+import { useRouter } from "next/navigation";
 
 export default function Quiz({ questions }) {
   const [answers, setAnswers] = useState({});
+  const router = useRouter();
 
   const handleAnswerChange = (questionId, selectedKey, questionData) => {
     const selectedAnswer = questionData.answers[selectedKey];
@@ -39,7 +41,10 @@ export default function Quiz({ questions }) {
       });
 
       const result = await response.json();
-      alert("Quiz submitted!");
+
+      if (result.status === "ok" && result.submissionId) {
+        router.push(`/result?id=${result.submissionId}`);
+      } 
     } catch (error) {
       alert("Błąd przy przesyłaniu.");
     }
