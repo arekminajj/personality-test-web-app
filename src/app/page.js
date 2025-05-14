@@ -43,7 +43,7 @@ export default function Quiz({ questions }) {
       const result = await response.json();
 
       if (result.status === "ok" && result.submissionId) {
-        router.push(`/result?id=${result.submissionId}`);
+        router.push(`/result/${result.submissionId}`);
       } 
     } catch (error) {
       alert("Błąd przy przesyłaniu.");
