@@ -1,4 +1,4 @@
-export default TestQuestions =
+const TestQuestions =
 [
   {
     "id": 1,
@@ -561,3 +561,5 @@ export default TestQuestions =
     }
   }
 ]
+
+export default TestQuestions;
