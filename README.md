@@ -1,6 +1,6 @@
 # MBTI Personality Web App
 
-Web application that allows users to take the MBTI (Myers-Briggs Type Indicator) personality test and receive a personality type result (e.g., INTJ, ENFP). The project is built with **Next.js** and uses **MongoDB** as the database. It's developed as part of a university course project for Inżynieria IO/BD.
+Web application that allows users to take the MBTI (Myers-Briggs Type Indicator) personality test and receive a personality type result (e.g., INTJ, ENFP). The project is built with **Next.js** and uses **MongoDB** as the database. It's developed as part of a university course project for IO/BD.
 
 
 ## Technologies
