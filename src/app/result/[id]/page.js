@@ -73,13 +73,13 @@ export default function ResultPage() {
 
       {/* Prawa kolumna: odpowiedzi */}
       <div className="space-y-4">
-        {Object.entries(data.answers).map(([id, answerData]) => (
+        {Object.entries(data.answers).map(([id, answerData], index) => (
           <div
             key={id}
             className="border rounded-lg p-4 bg-gray-100 dark:bg-gray-800"
           >
             <p className="font-semibold text-gray-700 dark:text-gray-200">
-              {answerData.question}
+              {index + 1}. {answerData.question}
             </p>
             <p className="text-sm text-gray-600 dark:text-gray-400">
               Twoja odpowiedź: <strong>{answerData.selectedAnswer.text}</strong> (
