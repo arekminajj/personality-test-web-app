@@ -1,9 +1,9 @@
-export default function Question({ questionData, selected, onChange }) {
+export default function Question({ questionData, selected, onChange, number }) {
   const { id, question, answers } = questionData;
 
   return (
     <div className="p-4 border rounded-xl shadow-md bg-black max-w-xl">
-      <h2 className="text-xl font-semibold mb-4 text-white">{question}</h2>
+      <h2 className="text-xl font-semibold mb-4 text-white">{number}. {question}</h2>
       <ul className="space-y-2">
         {Object.entries(answers).map(([key, answer]) => (
           <li key={key}>

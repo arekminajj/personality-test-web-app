@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
+import mbtiDescriptions from '../../../../data/mbtiDescriptions';
 
 export default function ResultPage() {
   const params = useParams();
   const id = params?.id;
-  
+
   const [data, setData] = useState(null);
   const [resultType, setResultType] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -39,7 +40,8 @@ export default function ResultPage() {
 
         if (json.data) {
           setData(json.data);
-          setResultType(calculateResult(json.data.answers));
+          const type = calculateResult(json.data.answers);
+          setResultType(type);
         } else {
           setData(null);
         }
@@ -58,14 +60,31 @@ export default function ResultPage() {
   if (!data) return <div className="p-4">Nie znaleziono testu lub wystąpił błąd.</div>;
 
   return (
-    <div className="max-w-2xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-4">Twój wynik MBTI: <span className="text-blue-600">{resultType}</span></h1>
-       
+    <div className="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-8">
+      {/* Lewa kolumna: wynik i opis */}
+      <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md self-start w-full max-w-prose">
+        <h1 className="text-3xl font-bold mb-4">
+          Twój typ osobowości: <span className="text-blue-600">{resultType}</span>
+        </h1>
+        <p className="text-gray-800 dark:text-gray-300 leading-relaxed">
+          {mbtiDescriptions[resultType]}
+        </p>
+      </div>
+
+      {/* Prawa kolumna: odpowiedzi */}
       <div className="space-y-4">
         {Object.entries(data.answers).map(([id, answerData]) => (
-          <div key={id} className="border rounded-lg p-4 bg-gray-100 dark:bg-gray-800">
-            <p className="font-semibold text-gray-700 dark:text-gray-200">{answerData.question}</p>
-            <p className="text-sm text-gray-600 dark:text-gray-400">Twoja odpowiedź: <strong>{answerData.selectedAnswer.text}</strong> ({answerData.selectedAnswer.type})</p>
+          <div
+            key={id}
+            className="border rounded-lg p-4 bg-gray-100 dark:bg-gray-800"
+          >
+            <p className="font-semibold text-gray-700 dark:text-gray-200">
+              {answerData.question}
+            </p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              Twoja odpowiedź: <strong>{answerData.selectedAnswer.text}</strong> (
+              {answerData.selectedAnswer.type})
+            </p>
           </div>
         ))}
       </div>
