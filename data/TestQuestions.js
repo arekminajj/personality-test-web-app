@@ -2,34 +2,34 @@ const TestQuestions =
 [
   {
     "id": 1,
-    "question": "Na imprezie najczęściej:",
+    "question": "Na imprezie zwykle:",
     "answers": {
-      "a": {"text": "Interesujesz się wieloma osobami, w tym obcymi", "type": "E"},
-      "b": {"text": "Interesujesz się kilkoma osobami, które znasz", "type": "I"}
+      "a": {"text": "Nawiązujesz kontakty z wieloma osobami, nawet nieznajomymi", "type": "E"},
+      "b": {"text": "Nawiązujesz kontakty z nielicznymi, znanymi ci osobami", "type": "I"}
     }
   },
   {
     "id": 2,
-    "question": "Jesteś bardziej:",
+    "question": "Częściej jesteś:",
     "answers": {
-      "a": {"text": "Realistą niż spekulantem", "type": "S"},
-      "b": {"text": "Spekulantem niż realistą", "type": "N"}
+      "a": {"text": "Realistą niż wizjonerem", "type": "S"},
+      "b": {"text": "Wizjonerem niż realistą", "type": "N"}
     }
   },
   {
     "id": 3,
     "question": "Czy gorsze jest:",
     "answers": {
-      "a": {"text": "Mieć „głowę w chmurach”", "type": "N"},
-      "b": {"text": "Być „w martwym punkcie”", "type": "S"}
+      "a": {"text": "Bujać w obłokach", "type": "N"},
+      "b": {"text": "Tkwić w rutynie", "type": "S"}
     }
   },
   {
     "id": 4,
-    "question": "Bardziej kierujesz się:",
+    "question": "Częściej imponują ci:",
     "answers": {
-      "a": {"text": "Zasadami", "type": "T"},
-      "b": {"text": "Emocjami", "type": "F"}
+      "a": {"text": "Zasady", "type": "T"},
+      "b": {"text": "Emocje", "type": "F"}
     }
   },
   {
@@ -44,13 +44,13 @@ const TestQuestions =
     "id": 6,
     "question": "Wolisz pracować:",
     "answers": {
-      "a": {"text": "Trzymając się terminów", "type": "J"},
-      "b": {"text": "Kiedy tylko chcesz", "type": "P"}
+      "a": {"text": "Terminowo", "type": "J"},
+      "b": {"text": "Kiedy „przyjdzie ochota”", "type": "P"}
     }
   },
   {
     "id": 7,
-    "question": "Zwykle podejmujesz decyzje:",
+    "question": "Zwykle wybierasz:",
     "answers": {
       "a": {"text": "Raczej ostrożnie", "type": "J"},
       "b": {"text": "Trochę impulsywnie", "type": "P"}
@@ -58,10 +58,10 @@ const TestQuestions =
   },
   {
     "id": 8,
-    "question": "Na imprezie najczęściej:",
+    "question": "Na imprezach:",
     "answers": {
       "a": {"text": "Zostajesz do późna, z rosnącą energią", "type": "E"},
-      "b": {"text": "Zostajesz krótko, z malejącą energią", "type": "I"}
+      "b": {"text": "Wychodzisz wcześniej, czując spadek energii", "type": "I"}
     }
   },
   {
@@ -82,18 +82,18 @@ const TestQuestions =
   },
   {
     "id": 11,
-    "question": "Oceniając innych, bardziej kierujesz się:",
+    "question": "Oceniając innych, częściej kierujesz się:",
     "answers": {
-      "a": {"text": "Prawem niż okolicznościami", "type": "T"},
-      "b": {"text": "Okolicznościami niż prawem", "type": "F"}
+      "a": {"text": "Obiektywnymi faktami", "type": "T"},
+      "b": {"text": "Subiektywnymi odczuciami", "type": "F"}
     }
   },
   {
     "id": 12,
-    "question": "W stosunku do innych, skłaniasz się raczej do bycia:",
+    "question": "W relacjach z innymi jesteś skłonny(-a) do:",
     "answers": {
-      "a": {"text": "Obiektywnym", "type": "T"},
-      "b": {"text": "Osobistym", "type": "F"}
+      "a": {"text": "Zachowania bezstronności", "type": "T"},
+      "b": {"text": "Okazywania osobistego zaangażowania", "type": "F"}
     }
   },
   {
@@ -114,26 +114,26 @@ const TestQuestions =
   },
   {
     "id": 15,
-    "question": "W swoich grupach towarzyskich:",
+    "question": "W swoim gronie znajomych:",
     "answers": {
-      "a": {"text": "Śledzisz wydarzenia innych", "type": "E"},
-      "b": {"text": "Jesteś w plecy z informacjami", "type": "I"}
+      "a": {"text": "Śledzisz bieżące wydarzenia w ich życiu", "type": "E"},
+      "b": {"text": "Często nie nadążasz za nowinkami", "type": "I"}
     }
   },
   {
     "id": 16,
-    "question": "W codziennych rzeczach jesteś bardziej skłonny do wykonywania ich:",
+    "question": "W codziennych czynnościach:",
     "answers": {
-      "a": {"text": "W tradycyjny sposób", "type": "J"},
-      "b": {"text": "Po swojemu", "type": "P"}
+      "a": {"text": "Działasz według ustalonych schematów", "type": "J"},
+      "b": {"text": "Działasz po swojemu", "type": "P"}
     }
   },
   {
     "id": 17,
     "question": "Pisząc, autorzy powinni:",
     "answers": {
-      "a": {"text": "Mówić to, co myślą, i myśleć to, co mówią", "type": "T"},
-      "b": {"text": "Wyrażać to bardziej przez analogie", "type": "F"}
+      "a": {"text": "„Mówić wprost, co mają na myśli”", "type": "T"},
+      "b": {"text": "Posługiwać się metaforami i analogiami", "type": "F"}
     }
   },
   {
@@ -149,15 +149,15 @@ const TestQuestions =
     "question": "Czy czujesz się bardziej komfortowo podejmując:",
     "answers": {
       "a": {"text": "Logiczne decyzje", "type": "T"},
-      "b": {"text": "Decyzje wartościowe", "type": "F"}
+      "b": {"text": "Decyzje oparte na wartościach", "type": "F"}
     }
   },
   {
     "id": 20,
-    "question": "Chcesz, żeby rzeczy były:",
+    "question": "Wolisz, gdy sprawy są:",
     "answers": {
-      "a": {"text": "Ustalone i postanowione", "type": "J"},
-      "b": {"text": "Niepewne i niezdecydowane", "type": "P"}
+      "a": {"text": "Rozstrzygnięte i jasne", "type": "J"},
+      "b": {"text": "Otwarte na zmiany", "type": "P"}
     }
   },
   {
@@ -170,10 +170,10 @@ const TestQuestions =
   },
   {
     "id": 22,
-    "question": "Podczas rozmowy telefonicznej:",
+    "question": "Dzwoniąc do kogoś:",
     "answers": {
-      "a": {"text": "Rzadko zastanawiasz się, co powiedzieć", "type": "E"},
-      "b": {"text": "Ćwiczysz, co powiesz", "type": "I"}
+      "a": {"text": "Rzadko zastanawiam się, co powiedzieć", "type": "E"},
+      "b": {"text": "Ćwiczę, co powiem", "type": "I"}
     }
   },
   {
@@ -181,7 +181,7 @@ const TestQuestions =
     "question": "Fakty:",
     "answers": {
       "a": {"text": "Mówią same za siebie", "type": "S"},
-      "b": {"text": "Ilustrują zasady", "type": "N"}
+      "b": {"text": "Są ilustracją ogólnych zasad", "type": "N"}
     }
   },
   {
@@ -194,10 +194,10 @@ const TestQuestions =
   },
   {
     "id": 25,
-    "question": "Bardziej jesteś:",
+    "question": "Częściej jesteś:",
     "answers": {
-      "a": {"text": "Osobą opanowaną", "type": "T"},
-      "b": {"text": "Osobą ciepłą", "type": "F"}
+      "a": {"text": "Osobą chłodną i opanowaną", "type": "T"},
+      "b": {"text": "Osobą serdeczną i emocjonalną", "type": "F"}
     }
   },
   {
@@ -210,18 +210,18 @@ const TestQuestions =
   },
   {
     "id": 27,
-    "question": "Wolisz pozwolić, aby wydarzenia działy się:",
+    "question": "Lepiej pozwalać, by wydarzenia:",
     "answers": {
-      "a": {"text": "Po starannym wyborze i decyzji", "type": "J"},
-      "b": {"text": "Losowo i przypadkowo", "type": "P"}
+      "a": {"text": "Były planowane i kontrolowane", "type": "J"},
+      "b": {"text": "Toczyły się spontanicznie", "type": "P"}
     }
   },
   {
     "id": 28,
-    "question": "Czujesz się lepiej, gdy:",
+    "question": "Lepiej się czujesz, gdy:",
     "answers": {
-      "a": {"text": "Kupisz", "type": "J"},
-      "b": {"text": "Masz opcję zakupu", "type": "P"}
+      "a": {"text": "Coś już kupiłeś(-aś)", "type": "J"},
+      "b": {"text": "Masz możliwość wyboru", "type": "P"}
     }
   },
   {
@@ -234,31 +234,31 @@ const TestQuestions =
   },
   {
     "id": 30,
-    "question": "Zdrowy rozsądek to:",
+    "question": "Zdrowy rozsądek jest:",
     "answers": {
-      "a": {"text": "Rzadko podlega wątpliwościom", "type": "S"},
-      "b": {"text": "Często podlega wątpliwościom", "type": "N"}
+      "a": {"text": "Rzadko kwestionowany", "type": "S"},
+      "b": {"text": "Często podważany", "type": "N"}
     }
   },
   {
     "id": 31,
-    "question": "Dzieci często:",
+    "question": "Dzieci często nie potrafią:",
     "answers": {
-      "a": {"text": "Nie wykorzystują swojego potencjału", "type": "S"},
-      "b": {"text": "Ćwiczą swoją fantazję wystarczająco", "type": "N"}
+      "a": {"text": "Być wystarczająco pomocne", "type": "S"},
+      "b": {"text": "Wykorzystywać wyobraźni", "type": "N"}
     }
   },
   {
     "id": 32,
-    "question": "Podejmując decyzje, czujesz się bardziej komfortowo:",
+    "question": "Przy podejmowaniu decyzji lepiej czujesz się z:",
     "answers": {
-      "a": {"text": "Ze standardami", "type": "J"},
-      "b": {"text": "Z uczuciami", "type": "F"}
+      "a": {"text": "Jasnymi standardami", "type": "J"},
+      "b": {"text": "Własnymi odczuciami", "type": "F"}
     }
   },
   {
     "id": 33,
-    "question": "Jesteś bardziej:",
+    "question": "Jesteś raczej:",
     "answers": {
       "a": {"text": "Stanowczy niż delikatny", "type": "T"},
       "b": {"text": "Delikatny niż stanowczy", "type": "F"}
@@ -269,31 +269,31 @@ const TestQuestions =
     "question": "Co jest bardziej godne podziwu:",
     "answers": {
       "a": {"text": "Zdolność do organizowania i bycia metodycznym", "type": "J"},
-      "b": {"text": "Zdolność do adaptacji i radzenia sobie", "type": "P"}
+      "b": {"text": "Umiejętność adaptacji i improwizacji", "type": "P"}
     }
   },
   {
     "id": 35,
-    "question": "Kładziesz większy nacisk na:",
+    "question": "Wyżej cenisz:",
     "answers": {
-      "a": {"text": "Nieskończoność", "type": "N"},
-      "b": {"text": "Otwartość umysłu", "type": "P"}
+      "a": {"text": "Nieskończone możliwości", "type": "N"},
+      "b": {"text": "Otwarty umysł", "type": "P"}
     }
   },
   {
     "id": 36,
-    "question": "Czy nowa i nietypowa interakcja z innymi osobami:",
+    "question": "Nowe, nieprzewidziane interakcje z ludźmi:",
     "answers": {
-      "a": {"text": "Pobudza Cię i daje Ci energię", "type": "E"},
-      "b": {"text": "Wyczerpuje Twoje zasoby energii", "type": "I"}
+      "a": {"text": "Dodają ci energii", "type": "E"},
+      "b": {"text": "Wyczerpują cię", "type": "I"}
     }
   },
   {
     "id": 37,
     "question": "Częściej jesteś:",
     "answers": {
-      "a": {"text": "Praktyczną osobą", "type": "S"},
-      "b": {"text": "Osobą fantazyjną", "type": "N"}
+      "a": {"text": "Osobą praktyczną", "type": "S"},
+      "b": {"text": "Osobą o bujnej wyobraźni", "type": "N"}
     }
   },
   {
@@ -322,31 +322,31 @@ const TestQuestions =
   },
   {
     "id": 41,
-    "question": "Czy jesteś bardziej komfortowy w pracy, która jest:",
+    "question": "Lepiej czujesz się w pracy:",
     "answers": {
-      "a": {"text": "Zorganizowana", "type": "J"},
-      "b": {"text": "Wykonywana w luźny sposób", "type": "P"}
+      "a": {"text": "Na umowę, z ustalonymi warunkami", "type": "J"},
+      "b": {"text": "Dorywczej, bez sztywnych reguł", "type": "P"}
     }
   },
   {
     "id": 42,
-    "question": "Czy zwykle szukasz:",
+    "question": "Zwykle szukasz:",
     "answers": {
-      "a": {"text": "Porządku", "type": "J"},
+      "a": {"text": "Porządku i struktury", "type": "J"},
       "b": {"text": "Czegoś, co się pojawi", "type": "P"}
     }
   },
   {
     "id": 43,
-    "question": "Czy preferujesz:",
+    "question": "Wolisz:",
     "answers": {
-      "a": {"text": "Wielu przyjaciół z krótkim kontaktem", "type": "E"},
-      "b": {"text": "Kilku przyjaciół z długotrwałym kontaktem", "type": "I"}
+      "a": {"text": "Wiele znajomości, ale powierzchownych", "type": "E"},
+      "b": {"text": "Kilka bliskich przyjaźni", "type": "I"}
     }
   },
   {
     "id": 44,
-    "question": "Czy kierujesz się bardziej:",
+    "question": "Kierujesz się bardziej:",
     "answers": {
       "a": {"text": "Faktami", "type": "S"},
       "b": {"text": "Zasadami", "type": "N"}
@@ -354,7 +354,7 @@ const TestQuestions =
   },
   {
     "id": 45,
-    "question": "Bardziej interesuje Cię:",
+    "question": "Bardziej interesują Cię:",
     "answers": {
       "a": {"text": "Produkcja i dystrybucja", "type": "S"},
       "b": {"text": "Projektowanie i badania", "type": "N"}
@@ -362,18 +362,18 @@ const TestQuestions =
   },
   {
     "id": 46,
-    "question": "Bardziej jesteś:",
+    "question": "Co jest większym komplementem:",
     "answers": {
-      "a": {"text": "Osobą logiczną", "type": "T"},
-      "b": {"text": "Osobą sentymentalną", "type": "F"}
+      "a": {"text": "„To bardzo logiczny człowiek”", "type": "T"},
+      "b": {"text": "„To bardzo wrażliwy człowiek”", "type": "F"}
     }
   },
   {
     "id": 47,
-    "question": "Bardziej w sobie cenisz, że jesteś:",
+    "question": "Cenisz w sobie bardziej:",
     "answers": {
-      "a": {"text": "Niezachwiany", "type": "T"},
-      "b": {"text": "Oddany", "type": "F"}
+      "a": {"text": "Nieugiętość", "type": "T"},
+      "b": {"text": "Oddanie", "type": "F"}
     }
   },
   {
@@ -381,7 +381,7 @@ const TestQuestions =
     "question": "Czy preferujesz częściej:",
     "answers": {
       "a": {"text": "Ostateczne i niezmienne stwierdzenie", "type": "J"},
-      "b": {"text": "Wstępne i tymczasowe stwierdzenie", "type": "P"}
+      "b": {"text": "Wstępne i otwarte sugestie", "type": "P"}
     }
   },
   {
@@ -396,69 +396,69 @@ const TestQuestions =
     "id": 50,
     "question": "Czy:",
     "answers": {
-      "a": {"text": "Łatwo rozmawiasz z obcymi", "type": "E"},
+      "a": {"text": "Łatwo nawiązujesz długie rozmowy z nieznajomymi", "type": "E"},
       "b": {"text": "Trudno jest Ci rozmawiać z obcymi", "type": "I"}
     }
   },
   {
     "id": 51,
-    "question": "Czy bardziej ufasz swojemu:",
+    "question": "Bardziej ufasz:",
     "answers": {
-      "a": {"text": "Doświadczeniu", "type": "S"},
-      "b": {"text": "Przeczuciu", "type": "N"}
+      "a": {"text": "Własnemu doświadczeniu", "type": "S"},
+      "b": {"text": "Przeczuciom", "type": "N"}
     }
   },
   {
     "id": 52,
-    "question": "Czy czujesz się bardziej:",
+    "question": "Czujesz, że jesteś:",
     "answers": {
-      "a": {"text": "Praktyczny niż pomysłowy", "type": "S"},
-      "b": {"text": "Pomysłowy niż praktyczny", "type": "N"}
+      "a": {"text": "Bardziej praktyczny niż pomysłowy", "type": "S"},
+      "b": {"text": "Bardziej pomysłowy niż praktyczny", "type": "N"}
     }
   },
   {
     "id": 53,
-    "question": "Co jest bardziej warte pochwały:",
+    "question": "Która osoba jest godniejsza podziwu:",
     "answers": {
-      "a": {"text": "Jasna rozumność", "type": "T"},
-      "b": {"text": "Silne uczucie", "type": "F"}
+      "a": {"text": "Ta o jasnym myśleniu", "type": "T"},
+      "b": {"text": "Ta o głębokich uczuciach", "type": "F"}
     }
   },
   {
     "id": 54,
-    "question": "Czy skłaniasz się bardziej do bycia:",
+    "question": "Skłaniasz się bardziej ku:",
     "answers": {
-      "a": {"text": "Obiektywnym", "type": "T"},
-      "b": {"text": "Sympatycznym", "type": "F"}
+      "a": {"text": "Bezstronności", "type": "T"},
+      "b": {"text": "Empatii", "type": "F"}
     }
   },
   {
     "id": 55,
-    "question": "Czy lepiej jest przede wszystkim:",
+    "question": "Lepiej jest:",
     "answers": {
-      "a": {"text": "Upewnić się, że wszystko jest zorganizowane", "type": "J"},
-      "b": {"text": "Pozwolić, by rzeczy się wydarzyły", "type": "P"}
+      "a": {"text": "Zaplanować wszystko zawczasu", "type": "J"},
+      "b": {"text": "Pozwolić, by sprawy toczyły się naturalnie", "type": "P"}
     }
   },
   {
     "id": 56,
-    "question": "W relacjach, czy większość rzeczy powinna być:",
+    "question": "W relacjach większość spraw powinna być:",
     "answers": {
-      "a": {"text": "Poddana renegocjacji", "type": "F"},
-      "b": {"text": "Losowa i okolicznościowa", "type": "P"}
+      "a": {"text": "Możliwa do renegocjacji", "type": "F"},
+      "b": {"text": "Zależna od okoliczności", "type": "P"}
     }
   },
   {
     "id": 57,
-    "question": "Kiedy dzwoni telefon:",
+    "question": "Gdy dzwoni telefon:",
     "answers": {
-      "a": {"text": "Spieszysz się, by odebrać pierwszy", "type": "E"},
-      "b": {"text": "Masz nadzieję, że ktoś inny odbierze", "type": "I"}
+      "a": {"text": "Śpieszysz się, by odebrać", "type": "E"},
+      "b": {"text": "Liczysz, że ktoś inny odbierze", "type": "I"}
     }
   },
   {
     "id": 58,
-    "question": "W sobie cenisz bardziej:",
+    "question": "Wyżej cenisz w sobie:",
     "answers": {
       "a": {"text": "Silne poczucie rzeczywistości", "type": "S"},
       "b": {"text": "Żywą wyobraźnię", "type": "N"}
@@ -466,47 +466,47 @@ const TestQuestions =
   },
   {
     "id": 59,
-    "question": "Bardziej przyciągają Cię:",
+    "question": "Pociąga cię bardziej:",
     "answers": {
-      "a": {"text": "Fundamenty", "type": "S"},
-      "b": {"text": "Wzmianki", "type": "N"}
+      "a": {"text": "To, co fundamentalne", "type": "S"},
+      "b": {"text": "To, co subtelne", "type": "N"}
     }
   },
   {
     "id": 60,
-    "question": "Który błąd jest większy:",
+    "question": "Co jest większym błędem:",
     "answers": {
-      "a": {"text": "Bycie zbytnim pasjonatem", "type": "F"},
-      "b": {"text": "Bycie zbytnio obiektywnym", "type": "T"}
+      "a": {"text": "Być zbyt emocjonalnym", "type": "F"},
+      "b": {"text": "Być zbyt chłodnym", "type": "T"}
     }
   },
   {
     "id": 61,
-    "question": "Czy widzisz siebie jako osobę zasadniczą czy:",
+    "question": "Postrzegasz siebie jako",
     "answers": {
-      "a": {"text": "Osobę twardą", "type": "T"},
-      "b": {"text": "Osobę miękką", "type": "F"}
+      "a": {"text": "Twardo stąpającego po ziemi", "type": "T"},
+      "b": {"text": "Osobę z miękkim sercem", "type": "F"}
     }
   },
   {
     "id": 62,
-    "question": "Która sytuacja bardziej Ci odpowiada:",
+    "question": "Co cię bardziej pociąga:",
     "answers": {
-      "a": {"text": "Zorganizowana i zaplanowana", "type": "J"},
-      "b": {"text": "Niezorganizowana i niezaplanowana", "type": "P"}
+      "a": {"text": "Struktura i harmonogram", "type": "J"},
+      "b": {"text": "Brak sztywnych ram", "type": "P"}
     }
   },
   {
     "id": 63,
-    "question": "Czy jesteś osobą, która jest bardziej:",
+    "question": "Jesteś raczej:",
     "answers": {
-      "a": {"text": "Zrutynizowana niż kapryśna", "type": "J"},
-      "b": {"text": "Kapryśna niż zrutynizowana", "type": "P"}
+      "a": {"text": "Zrutynizowany niż kapryśny", "type": "J"},
+      "b": {"text": "Kapryśny niż zrutynizowany", "type": "P"}
     }
   },
   {
     "id": 64,
-    "question": "Czy jesteś bardziej skłonny do bycia:",
+    "question": "Jesteś bardziej skłonny do bycia:",
     "answers": {
       "a": {"text": "Łatwo dostępnym", "type": "E"},
       "b": {"text": "Trochę zamkniętym", "type": "I"}
@@ -514,15 +514,15 @@ const TestQuestions =
   },
   {
     "id": 65,
-    "question": "W piśmie bardziej wolisz:",
+    "question": "W tekstach wolisz:",
     "answers": {
-      "a": {"text": "Bycie dosłownym", "type": "S"},
-      "b": {"text": "Bycie figuratywnym", "type": "N"}
+      "a": {"text": "Dosłowność", "type": "S"},
+      "b": {"text": "Przenośnie", "type": "N"}
     }
   },
   {
     "id": 66,
-    "question": "Czy trudniej jest Ci:",
+    "question": "Trudniej jest Ci:",
     "answers": {
       "a": {"text": "Identyfikować się z innymi", "type": "F"},
       "b": {"text": "Wykorzystywać innych", "type": "T"}
@@ -540,24 +540,24 @@ const TestQuestions =
     "id": 68,
     "question": "Który z tych błędów jest większy:",
     "answers": {
-      "a": {"text": "Bycie bezkrytycznym", "type": "F"},
-      "b": {"text": "Bycie zbyt krytycznym", "type": "T"}
+      "a": {"text": "Być zbyt bezkrytycznym", "type": "F"},
+      "b": {"text": "Być zbyt krytycznym", "type": "T"}
     }
   },
   {
     "id": 69,
-    "question": "Czy preferujesz:",
+    "question": "Wolisz:",
     "answers": {
-      "a": {"text": "Zaplanowane wydarzenie", "type": "J"},
-      "b": {"text": "Nieplanowane wydarzenie", "type": "P"}
+      "a": {"text": "Zaplanowane wydarzenia", "type": "J"},
+      "b": {"text": "Spontaniczne sytuacje", "type": "P"}
     }
   },
   {
     "id": 70,
-    "question": "Czy masz tendencję do bycia bardziej:",
+    "question": "Jesteś raczej:",
     "answers": {
-      "a": {"text": "Deliberacyjnym niż spontanicznym", "type": "J"},
-      "b": {"text": "Spontanicznym niż deliberacyjnym", "type": "P"}
+      "a": {"text": "Rozważny niż spontaniczny", "type": "J"},
+      "b": {"text": "Spontaniczny niż rozważny", "type": "P"}
     }
   }
 ]
