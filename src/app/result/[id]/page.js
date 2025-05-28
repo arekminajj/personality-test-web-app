@@ -85,7 +85,42 @@ export default function ResultPage() {
       </div>
     );
   }
-  if (!data) return <div className="p-4">Nie znaleziono testu lub wystąpił błąd.</div>;
+  if (!data) {
+    return (
+      <div className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-6 bg-white/70 p-6 text-center backdrop-blur-sm dark:bg-gray-900/60">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-16 w-16 flex-shrink-0 text-red-500"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 9v4m0 4h.01M2.458 12C3.732 7.943 7.522 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S3.732 16.057 2.458 12z"
+          />
+        </svg>
+
+        <div>
+          <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
+            Nie znaleziono testu
+          </h2>
+          <p className="mt-2 max-w-xs text-sm text-gray-600 dark:text-gray-400">
+            Link może być niepoprawny lub wystąpił nieoczekiwany błąd.
+          </p>
+        </div>
+
+        <button
+          onClick={() => location.reload()}
+          className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+        >
+          Odśwież stronę
+        </button>
+      </div>
+    );
+  }
 
   const answersArray = Object.entries(data.answers);
   const totalPages = Math.ceil(answersArray.length / answersPerPage);
