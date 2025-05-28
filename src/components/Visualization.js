@@ -7,7 +7,7 @@ import {
   Tooltip,
   Cell,
   Legend,
-} from 'recharts'
+} from 'recharts' 
 
 const COLORS = [
   '#4ADE80',
@@ -39,7 +39,7 @@ export default function Visualization({ data }) {
                   cy="50%"
                   innerRadius={40}
                   outerRadius={80}
-                  label={({ name, value }) => `${name}: ${value}%`}
+                  label={({ value }) => `${value}%`}
                   labelLine={false}
                 >
                   {stats.map((_, idx) => (
