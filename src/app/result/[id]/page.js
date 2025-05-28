@@ -12,6 +12,10 @@ export default function ResultPage() {
   const [resultType, setResultType] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Nowe stany dla dzielenia na strony
+  const [currentPage, setCurrentPage] = useState(0);
+  const answersPerPage = 5;
+
   const calculateResult = (answers) => {
     const traits = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
 
@@ -40,8 +44,7 @@ export default function ResultPage() {
 
         if (json.data) {
           setData(json.data);
-          const type = calculateResult(json.data.answers);
-          setResultType(type);
+          setResultType(calculateResult(json.data.answers));
         } else {
           setData(null);
         }
@@ -119,34 +122,62 @@ export default function ResultPage() {
     );
   }
 
+  const answersArray = Object.entries(data.answers);
+  const totalPages = Math.ceil(answersArray.length / answersPerPage);
+
+  const paginatedAnswers = answersArray.slice(
+    currentPage * answersPerPage,
+    (currentPage + 1) * answersPerPage
+  );
+
   return (
-    <div className="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-8">
-      {/* Lewa kolumna: wynik i opis */}
-      <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md self-start w-full max-w-prose">
-        <h1 className="text-3xl font-bold mb-4">
-          Twój typ osobowości: <span className="text-blue-600">{resultType}</span>
+    <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md">
+        <h1 className="text-2xl font-bold mb-4">
+          Twój wynik MBTI: <span className="text-blue-600">{resultType}</span>
         </h1>
         <p className="text-gray-800 dark:text-gray-300 leading-relaxed">
           {mbtiDescriptions[resultType]}
         </p>
       </div>
 
-      {/* Prawa kolumna: odpowiedzi */}
       <div className="space-y-4">
-        {Object.entries(data.answers).map(([id, answerData], index) => (
+        {paginatedAnswers.map(([id, answerData], index) => (
           <div
             key={id}
             className="border rounded-lg p-4 bg-gray-100 dark:bg-gray-800"
           >
             <p className="font-semibold text-gray-700 dark:text-gray-200">
-              {index + 1}. {answerData.question}
+              {currentPage * answersPerPage + index + 1}. {answerData.question}
             </p>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Twoja odpowiedź: <strong>{answerData.selectedAnswer.text}</strong> (
+              Twoja odpowiedź:{" "}
+              <strong>{answerData.selectedAnswer.text}</strong> (
               {answerData.selectedAnswer.type})
             </p>
           </div>
         ))}
+
+        {/* Nawigacja stron */}
+        <div className="flex justify-between mt-6">
+          <button
+            onClick={() => setCurrentPage((p) => p - 1)}
+            disabled={currentPage === 0}
+            className="px-4 py-2 bg-gray-700 text-white rounded disabled:opacity-50"
+          >
+            Poprzednie
+          </button>
+          <div className="text-sm text-gray-600 dark:text-gray-400">
+            Strona {currentPage + 1} z {totalPages}
+          </div>
+          <button
+            onClick={() => setCurrentPage((p) => p + 1)}
+            disabled={currentPage >= totalPages - 1}
+            className="px-4 py-2 bg-gray-700 text-white rounded disabled:opacity-50"
+          >
+            Następne
+          </button>
+        </div>
       </div>
     </div>
   );
