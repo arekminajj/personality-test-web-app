@@ -12,12 +12,6 @@ export default function TypesPage() {
       <div className="grid md:grid-cols-2 gap-10 lg:gap-20">
         {Object.entries(mbtiDescriptions).map(([type, description]) => (
           <div key={type}>
-            {/* 
-              🟦 DESKTOP UKŁAD (widoczny tylko od lg wzwyż)
-              - Sztywne rozmiary
-              - Układ: obrazek po prawej, opis po lewej (flex-row-reverse)
-              - Widoczny tylko na desktopie
-            */}
             <div
               className="hidden lg:flex flex-row-reverse items-center"
               style={{ gap: "70px" }}
@@ -25,7 +19,7 @@ export default function TypesPage() {
               <img
                 src={`/types/${type}.jpg`}
                 alt={`Obrazek typu ${type}`}
-                className="w-[300px] h-[280px] object-cover shadow-lg rounded-2xl overflow-hidden"
+                className="w-[300px] h-[280px] object-cover shadow-lg rounded-2xl"
               />
               <div
                 className="bg-white dark:bg-gray-900 border rounded-xl shadow px-6 py-4"
@@ -43,12 +37,6 @@ export default function TypesPage() {
               </div>
             </div>
 
-            {/* 
-              🟥 MOBILE UKŁAD (widoczny tylko poniżej lg)
-              - Układ pionowy
-              - Mniejsze rozmiary obrazka i czcionki
-              - Osobne style dla lepszej responsywności
-            */}
             <div
               className="flex flex-col lg:hidden items-center"
               style={{ gap: "30px" }}
