@@ -40,12 +40,12 @@ export default function TypesPage() {
   }
 
   return (
-    <div className="max-w-8xl mx-auto pt-6 pb-6 pl-4 pr-4 lg:pl-6 lg:pr-16">
+    <div className="max-w-8xl mx-auto pt-6 pb-6 pl-4 pr-4 lg:pl-6 lg:pr-16 bg-black">
       <h1 className="text-3xl font-bold mb-10 text-center">
         Typy osobowości MBTI
       </h1>
 
-      <div className="grid md:grid-cols-2 gap-10 lg:gap-20">
+      <div className="grid md:grid-cols-2 gap-10 lg:gap-20 bg-black">
         {Object.entries(MbtiDescriptions).map(([type, description]) => (
           <div key={type}>
             {/* Widok desktop */}
