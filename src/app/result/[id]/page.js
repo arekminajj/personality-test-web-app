@@ -250,6 +250,37 @@ export default function ResultPage() {
             Następne
           </button>
         </div>
+
+        <div className="mt-6 px-4 w-full">
+          <h3 className="text-lg sm:text-xl font-semibold text-blue-500 mb-2 text-center">
+            Twój kod wyniku
+          </h3>
+
+          <div
+            className="bg-gray-800 text-white border border-gray-600 rounded-lg px-4 py-3 mx-auto text-center"
+            style={{
+              fontSize: "16px",
+              maxWidth: "400px",
+              height: "60px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <code className="font-bold tracking-wide break-all select-text">
+              {id}
+            </code>
+          </div>
+
+          <div className="mx-auto mt-2" style={{ maxWidth: "400px" }}>
+            <button
+              onClick={() => navigator.clipboard.writeText(id)}
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-6 py-3 rounded-md shadow-md"
+            >
+              Kopiuj
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
