@@ -13,12 +13,12 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 flex items-center justify-center">
+      <div className="fixed inset-0 flex items-center justify-center bg-black text-white z-50">
         {/* SR-only wrapper keeps the status semantics */}
         <div role="status">
           <svg
             aria-hidden="true"
-            className="w-24 h-24 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+            className="w-24 h-24 text-gray-400 animate-spin fill-blue-600"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

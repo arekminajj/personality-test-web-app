@@ -111,12 +111,12 @@ export default function Quiz() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 flex items-center justify-center">
+      <div className="fixed inset-0 flex items-center justify-center bg-black text-white z-50">
         {/* SR-only wrapper keeps the status semantics */}
         <div role="status">
           <svg
             aria-hidden="true"
-            className="w-24 h-24 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+            className="w-24 h-24 text-gray-400 animate-spin fill-blue-600"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -187,12 +187,17 @@ export default function Quiz() {
           <button
             onClick={handlePrev}
             disabled={currentBatch === 0}
-            className="bg-gray-300 hover:bg-gray-400 text-black font-semibold py-2 px-4 rounded disabled:opacity-50"
+            className={`bg-gray-300 text-black font-semibold py-2 px-4 rounded 
+              ${
+                currentBatch === 0
+                  ? "opacity-50 cursor-not-allowed"
+                  : "hover:bg-gray-400 cursor-pointer"
+              }`}
           >
             Wstecz
           </button>
 
-          <div className="text-center text-sm text-gray-500 mt-0">
+          <div className="text-center text-base text-gray-500 mt-0">
             Strona {currentBatch + 1} z {totalBatches}
           </div>
 
@@ -208,7 +213,12 @@ export default function Quiz() {
             <button
               onClick={handleNext}
               disabled={!isCurrentBatchComplete}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded disabled:opacity-50"
+              className={`bg-blue-600 text-white font-semibold py-2 px-4 rounded 
+              ${
+                !isCurrentBatchComplete
+                  ? "opacity-50 cursor-not-allowed"
+                  : "hover:bg-blue-700 cursor-pointer"
+              }`}
             >
               Dalej
             </button>

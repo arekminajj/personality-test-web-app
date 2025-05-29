@@ -14,12 +14,12 @@ export default function TypesPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 flex items-center justify-center">
+      <div className="fixed inset-0 flex items-center justify-center bg-black text-white z-50">
         {/* SR-only wrapper keeps the status semantics */}
         <div role="status">
           <svg
             aria-hidden="true"
-            className="w-24 h-24 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+            className="w-24 h-24 text-gray-400 animate-spin fill-blue-600"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,7 @@ export default function TypesPage() {
                 className="object-cover shadow-lg rounded-2xl"
               />
               <div
-                className="bg-white dark:bg-gray-900 border rounded-xl shadow px-6 py-4"
+                className="bg-gray-900 border border-gray-700 rounded-xl shadow px-6 py-4"
                 style={{
                   width: "500px",
                   height: "260px",
@@ -69,8 +69,8 @@ export default function TypesPage() {
                   fontSize: "18px",
                 }}
               >
-                <h2 className="text-xl font-bold text-blue-600">{type}</h2>
-                <p className="mt-2 text-gray-700 dark:text-gray-300 whitespace-pre-line">
+                <h2 className="text-xl font-bold text-blue-400">{type}</h2>
+                <p className="mt-2 text-gray-100 whitespace-pre-line">
                   {description}
                 </p>
               </div>
@@ -89,14 +89,14 @@ export default function TypesPage() {
                 className="w-full h-[600px] object-cover shadow-md rounded-xl"
               />
               <div
-                className="bg-gray-900 border border-white rounded-xl shadow px-4 py-4"
+                className="bg-gray-900 border border-gray-700 rounded-xl shadow px-4 py-4"
                 style={{
                   width: "100%",
                   fontSize: "16px",
                 }}
               >
-                <h2 className="text-lg font-semibold text-blue-600">{type}</h2>
-                <p className="mt-2 text-white dark:text-gray-300 whitespace-pre-line leading-relaxed">
+                <h2 className="text-lg font-semibold text-blue-400">{type}</h2>
+                <p className="mt-2 text-gray-100 whitespace-pre-line leading-relaxed">
                   {description}
                 </p>
               </div>

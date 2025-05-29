@@ -1,34 +1,37 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import TestQuestions from '../../data/TestQuestions'
-import Visualization from '@/components/Visualization'
+import { useState, useEffect } from "react";
+import TestQuestions from "../../data/TestQuestions";
+import Visualization from "@/components/Visualization";
 
 export default function Page() {
-  const [stats, setStats] = useState(null)
-  const [error, setError] = useState(null)
+  const [stats, setStats] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(process.env.NEXT_PUBLIC_BASE_URL + `/api/stats`, { cache: 'no-store' })
-      .then(res => {
-        if (!res.ok) throw new Error('Failed to load stats')
-        return res.json()
+    fetch(process.env.NEXT_PUBLIC_BASE_URL + `/api/stats`, {
+      cache: "no-store",
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to load stats");
+        return res.json();
       })
       .then(({ data }) => setStats(data))
-      .catch(err => setError(err.message))
-  }, [])
+      .catch((err) => setError(err.message));
+  }, []);
 
   if (error) {
-    return <p className="text-red-500 text-center">{error}</p>
+    return <p className="text-red-500 text-center">{error}</p>;
   }
 
   if (!stats) {
     return (
-      <main className="bg-black min-h-screen text-white flex items-center justify-center">
+      <div className="fixed inset-0 flex items-center justify-center bg-black text-white z-50">
+        {/* SR-only wrapper keeps the status semantics */}
         <div role="status">
           <svg
             aria-hidden="true"
-            className="w-24 h-24 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+            className="w-24 h-24 text-gray-400 animate-spin fill-blue-600"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -44,24 +47,24 @@ export default function Page() {
           </svg>
           <span className="sr-only">Loading...</span>
         </div>
-      </main>
-    )
+      </div>
+    );
   }
 
   const merged = stats
     .map(({ questionId, stats }) => {
-      const q = TestQuestions.find(q => String(q.id) === questionId)
+      const q = TestQuestions.find((q) => String(q.id) === questionId);
       const statsWithText = stats.map(({ key, percent }) => ({
         answerText: q.answers[key].text,
         percent,
-      }))
+      }));
       return {
         questionId,
         questionText: q ? q.question : `Question ${questionId}`,
         stats: statsWithText,
-      }
+      };
     })
-    .sort((a, b) => Number(a.questionId) - Number(b.questionId))
+    .sort((a, b) => Number(a.questionId) - Number(b.questionId));
 
   return (
     <main className="bg-black min-h-screen text-white py-8">
@@ -70,5 +73,5 @@ export default function Page() {
       </h1>
       <Visualization data={merged} />
     </main>
-  )
+  );
 }

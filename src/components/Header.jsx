@@ -52,17 +52,24 @@ export default function Header() {
             <input
               type="text"
               value={code}
-              onChange={(e) => setCode(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value;
+                if (value.length <= 10) setCode(value);
+              }}
               placeholder="Wpisz kod"
               className="w-[130px] pl-3 pr-4 py-3 rounded-lg bg-gray-800 text-white placeholder-gray-500 text-[16px] outline-none"
             />
             <button
               onClick={() => {
-                if (code.trim()) {
+                if (code.trim().length === 10) {
                   window.location.href = `/result/${code.trim()}`;
                 }
               }}
-              className="px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg"
+              className={`px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg ${
+                code.trim().length === 10
+                  ? "cursor-pointer"
+                  : "cursor-not-allowed"
+              }`}
             >
               Sprawdź wynik
             </button>
@@ -101,18 +108,25 @@ export default function Header() {
             <input
               type="text"
               value={code}
-              onChange={(e) => setCode(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value;
+                if (value.length <= 10) setCode(value);
+              }}
               placeholder="Wpisz kod"
               className="w-full pl-3 pr-4 py-3 rounded-lg bg-gray-800 text-white placeholder-gray-500 text-[16px] outline-none"
             />
             <button
               onClick={() => {
-                if (code.trim()) {
+                if (code.trim().length === 10) {
                   setOpen(false);
                   window.location.href = `/result/${code.trim()}`;
                 }
               }}
-              className="px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white text-[15px] font-semibold rounded-lg"
+              className={`px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white text-[15px] font-semibold rounded-lg ${
+                code.trim().length === 10
+                  ? "cursor-pointer"
+                  : "cursor-not-allowed"
+              }`}
             >
               Sprawdź wynik
             </button>
