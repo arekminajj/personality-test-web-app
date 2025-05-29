@@ -31,8 +31,8 @@ export default function Quiz() {
   );
   const fillColor = getInterpolatedColor(progress);
 
-  function scrollToTopIfMobile() {
-    if (typeof window !== "undefined" && window.innerWidth < 1024) {
+  function scrollToTop() {
+    if (typeof window !== "undefined") {
       setTimeout(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }, 50);
@@ -54,14 +54,14 @@ export default function Quiz() {
   const handleNext = () => {
     if (currentBatch < totalBatches - 1) {
       setCurrentBatch(currentBatch + 1);
-      scrollToTopIfMobile();
+      scrollToTop();
     }
   };
 
   const handlePrev = () => {
     if (currentBatch > 0) {
       setCurrentBatch(currentBatch - 1);
-      scrollToTopIfMobile();
+      scrollToTop();
     }
   };
 
