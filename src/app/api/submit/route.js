@@ -1,4 +1,4 @@
-import client from "../../../../lib/mongodb";
+import client from "../../../lib/mongodb";
 
 function makeid(length) {
   var result = '';

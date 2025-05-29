@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import mbtiDescriptions from '../../../../data/mbtiDescriptions';
+import MbtiDescriptions from '../../../data/MbtiDescriptions';
 
 export default function ResultPage() {
   const params = useParams();
@@ -137,7 +137,7 @@ export default function ResultPage() {
           Twój wynik MBTI: <span className="text-blue-600">{resultType}</span>
         </h1>
         <p className="text-gray-800 dark:text-gray-300 leading-relaxed">
-          {mbtiDescriptions[resultType]}
+          {MbtiDescriptions[resultType]}
         </p>
       </div>
 

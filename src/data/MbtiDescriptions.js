@@ -1,4 +1,4 @@
-const mbtiDescriptions = {
+const MbtiDescriptions = {
   ISTJ: "ISTJ to realistyczni i odpowiedzialni indywidualiści, którzy cenią tradycję, porządek i obowiązek. Są sumienni, dokładni i dobrze zorganizowani. Często są ostoją stabilności w pracy i rodzinie.",
   ISFJ: "ISFJ to cisi opiekunowie, oddani i lojalni. Mają silne poczucie obowiązku wobec innych, zwracają uwagę na detale i są bardzo empatyczni. Lubią pomagać, ale często nie szukają uznania.",
   INFJ: "INFJ to wizjonerzy, kierujący się głębokimi przekonaniami i wartościami. Są intuicyjni, empatyczni i skupieni na długoterminowych celach. Potrafią inspirować innych i działać dla większego dobra.",
@@ -17,4 +17,4 @@ const mbtiDescriptions = {
   ENTJ: "ENTJ to urodzeni liderzy, skupieni na celach i efektywności. Są ambitni, zorganizowani i pewni siebie. Potrafią planować strategicznie i motywować innych do działania."
 };
 
-export default mbtiDescriptions;
+export default MbtiDescriptions;

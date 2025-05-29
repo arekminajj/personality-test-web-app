@@ -1,6 +1,6 @@
 "use client";
 
-import mbtiDescriptions from "../../../data/mbtiDescriptions";
+import MbtiDescriptions from "../../data/MbtiDescriptions";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
@@ -44,8 +44,8 @@ export default function TypesPage() {
         Typy osobowości MBTI
       </h1>
 
-      <div className="grid md:grid-cols-2 gap-4 lg:gap-20">
-        {Object.entries(mbtiDescriptions).map(([type, description]) => (
+      <div className="grid md:grid-cols-2 gap-10 lg:gap-20">
+        {Object.entries(MbtiDescriptions).map(([type, description]) => (
           <div key={type}>
             {/* Widok desktop */}
             <div
