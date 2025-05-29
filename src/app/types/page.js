@@ -14,7 +14,8 @@ export default function TypesPage() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 flex items-center justify-center bg-white dark:bg-gray-900">
+      <div className="fixed inset-0 flex items-center justify-center">
+        {/* SR-only wrapper keeps the status semantics */}
         <div role="status">
           <svg
             aria-hidden="true"
