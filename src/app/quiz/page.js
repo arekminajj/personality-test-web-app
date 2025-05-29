@@ -75,7 +75,7 @@ export default function Quiz() {
   );
 
   return (
-    <div className="space-y-6 p-4 max-w-xl mx-auto select-none">
+    <div className="space-y-6 p-4 max-w-xl mx-auto select-none bg-black text-white">
       {currentQuestions.map((q, idx) => (
         <Question
           key={q.id}
@@ -100,23 +100,22 @@ export default function Quiz() {
         </div>
 
         {currentBatch === totalBatches - 1 ? (
-            <button
-              onClick={handleSubmit}
-              disabled={!isCurrentBatchComplete}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded disabled:opacity-50"
-            >
-              Prześlij odpowiedzi
-            </button>
-          ) : (
-            <button
-              onClick={handleNext}
-              disabled={!isCurrentBatchComplete}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded disabled:opacity-50"
-            >
-              Dalej
-            </button>
-          )
-        }
+          <button
+            onClick={handleSubmit}
+            disabled={!isCurrentBatchComplete}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded disabled:opacity-50"
+          >
+            Prześlij odpowiedzi
+          </button>
+        ) : (
+          <button
+            onClick={handleNext}
+            disabled={!isCurrentBatchComplete}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded disabled:opacity-50"
+          >
+            Dalej
+          </button>
+        )}
       </div>
     </div>
   );
