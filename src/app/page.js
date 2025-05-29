@@ -12,7 +12,7 @@ export default function Home() {
     { answerText: "Sugestia od znajomego/coacha", percent: 10 },
   ];
 
-  // BarChart 1 – Najważniejsze oczekiwania wobec testu
+  // BarChart 1 – Najczęstsze oczekiwania wobec testu
   const expectationsBar = [
     { name: "Lepsze relacje", value: 25 },
     { name: "Wskazówki zawodowe", value: 23 },
@@ -21,22 +21,13 @@ export default function Home() {
     { name: "Radzenie sobie ze stresem", value: 14 },
   ];
 
-  // PieChart 2 – Najczęstsze wyzwania/problematiczne obszary wg MBTI
+  // PieChart 2 – Najczęstsze wyzwania/problematyczne obszary wg MBTI
   const problemsPie = [
     { answerText: "Trudności z decyzjami", percent: 28 },
     { answerText: "Problemy w relacjach", percent: 24 },
     { answerText: "Brak motywacji", percent: 18 },
     { answerText: "Stres zawodowy", percent: 17 },
     { answerText: "Niepewność kariery", percent: 13 },
-  ];
-
-  // BarChart 2 – Najczęstsze strategie radzenia sobie
-  const copingBar = [
-    { name: "Rozmowa z bliskimi", value: 27 },
-    { name: "Szukanie w internecie", value: 24 },
-    { name: "Zmiana otoczenia/pracy", value: 18 },
-    { name: "Rozwój osobisty", value: 16 },
-    { name: "Konsultacja z psychologiem", value: 15 },
   ];
 
   return (
@@ -104,24 +95,20 @@ export default function Home() {
         </section>
 
         {/* PRAWA SEKCJA – wykresy */}
-        <aside className="flex-1 flex flex-col gap-6 min-w-[320px]">
+        <aside className="flex-1 flex flex-col gap-6 min-w-[320px] max-w-[640px]">
           {/* Wykresy z propozycji 2 */}
           <Visualization
             title="Dlaczego ludzie robią test MBTI?"
             data={reasonsPie}
           />
           <BarVisualization
-            title="Najważniejsze oczekiwania wobec wyniku testu"
+            title="Najczęstsze oczekiwania wobec wyniku testu"
             data={expectationsBar}
           />
           {/* Wykresy z propozycji 1 */}
           <Visualization
-            title="Najczęstsze wyzwania/problematiczne obszary wg MBTI"
+            title="Najczęstsze wyzwania/problematyczne obszary według MBTI"
             data={problemsPie}
-          />
-          <BarVisualization
-            title="Najczęstsze strategie radzenia sobie z problemami"
-            data={copingBar}
           />
         </aside>
       </div>

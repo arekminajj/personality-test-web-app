@@ -13,7 +13,7 @@ const COLORS = ["#4ADE80", "#F472B6", "#60A5FA", "#FBBF24", "#A78BFA"];
 export default function Visualization({ data, title }) {
   return (
     <div className="bg-gray-900 rounded-2xl shadow-lg p-6 mb-8">
-      <h2 className="text-xl font-semibold mb-4">{title}</h2>
+      <h2 className="text-xl font-semibold mb-4 text-center">{title}</h2>
       <div className="h-64 w-full">
         <ResponsiveContainer>
           <PieChart>
