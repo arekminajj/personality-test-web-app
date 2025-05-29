@@ -1,4 +1,4 @@
-import TestQuestions from '../../../data/TestQuestions'
+import TestQuestions from '../../data/TestQuestions'
 import Visualization from '@/components/Visualization'
 
 export default async function Page() {
