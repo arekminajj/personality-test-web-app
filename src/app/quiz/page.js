@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Question from "../ui/MBTIquestion";
+import Question from "../../components/MBTIquestion";
 import TestQuestions from "../../data/TestQuestions";
 import { useRouter } from "next/navigation";
 
