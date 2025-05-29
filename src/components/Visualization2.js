@@ -65,7 +65,7 @@ const renderCustomLabel = ({
 
 export default function Visualization({ data, title }) {
   return (
-    <div className="bg-gray-900 rounded-2xl shadow-lg p-6 mb-6">
+    <div className="bg-gray-900 rounded-2xl shadow-lg p-6 mb-6 mt-3">
       <h2 className="text-xl font-semibold mb-1 text-center">{title}</h2>
       <div className="h-64 w-full">
         <ResponsiveContainer>
