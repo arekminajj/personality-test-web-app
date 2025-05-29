@@ -66,7 +66,7 @@ export default function Home() {
     <main className="min-h-screen bg-black text-white py-8">
       <div className="flex flex-col lg:flex-row max-w-8xl mx-auto gap-10 px-4 sm:px-6">
         <section className="flex-1 lg:max-w-[54%] w-full">
-          <section className="max-w-3xl mx-auto px-4 sm:px-6 py-1 text-gray-900 dark:text-gray-100 text-justify">
+          <section className="max-w-3xl mx-auto px-4 sm:px-6 py-1 text-white text-justify">
             <h2 className="text-2xl sm:text-3xl font-bold mb-5 text-blue-600">
               O teście MBTI
             </h2>

@@ -78,7 +78,7 @@ export default function TypesPage() {
 
             {/* Widok mobilny */}
             <div
-              className="flex flex-col lg:hidden items-center"
+              className="flex flex-col lg:hidden items-center bg-black"
               style={{ gap: "30px" }}
             >
               <Image
