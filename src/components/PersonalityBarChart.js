@@ -91,7 +91,7 @@ export default function PersonalityBarChart({
   return (
     <div className="bg-gray-900 rounded-2xl shadow-lg p-6 mb-6 w-full max-w-[1630px] mx-auto">
       <h2 className="text-xl font-semibold mb-4 text-center">{title}</h2>
-      <div className="h-[300px] w-full">
+      <div className="h-[220px] sm:h-[300px] w-full">
         <ResponsiveContainer>
           <BarChart data={transformed} barCategoryGap="10%" barGap={0}>
             <XAxis

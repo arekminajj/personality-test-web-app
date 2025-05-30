@@ -94,21 +94,33 @@ export default function Page() {
 
       <div ref={vizRef}>
         <Visualization data={currentQuestions} />
-        <div className="flex justify-center gap-4 mt-4">
+        <div className="flex items-center justify-center gap-6 mt-4">
           <button
             onClick={() => setCurrentPage((p) => p - 1)}
             disabled={currentPage === 0}
-            className="px-4 py-2 rounded bg-gray-700 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:cursor-pointer"
+            className={`px-4 py-2 rounded bg-gray-700 text-white transition 
+      ${
+        currentPage === 0
+          ? "opacity-50 cursor-not-allowed"
+          : "hover:cursor-pointer"
+      }`}
           >
             Poprzednie
           </button>
-          <span className="text-white mt-2">
+
+          <span className="text-white font-medium text-sm sm:text-base">
             Strona {currentPage + 1} z {totalPages}
           </span>
+
           <button
             onClick={() => setCurrentPage((p) => p + 1)}
             disabled={currentPage >= totalPages - 1}
-            className="px-4 py-2 rounded bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:cursor-pointer"
+            className={`px-4 py-2 rounded bg-blue-600 text-white transition 
+      ${
+        currentPage >= totalPages - 1
+          ? "opacity-50 cursor-not-allowed"
+          : "hover:bg-blue-700 hover:cursor-pointer"
+      }`}
           >
             Następne
           </button>
