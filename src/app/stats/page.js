@@ -1,16 +1,22 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import TestQuestions from "../../data/TestQuestions";
 import Visualization from "@/components/Visualization";
 import PersonalityBarChart from "@/components/PersonalityBarChart";
 
+const BATCH_SIZE = 5;
+
 export default function Page() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
+  const [currentPage, setCurrentPage] = useState(0);
+  const vizRef = useRef(null); // 👈 odwołanie do sekcji wykresów kołowych
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/stats`, { cache: "no-store" })
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/stats`, {
+      cache: "no-store",
+    })
       .then((res) => {
         if (!res.ok) throw new Error("Failed to load stats");
         return res.json();
@@ -18,6 +24,13 @@ export default function Page() {
       .then(({ data }) => setData(data))
       .catch((err) => setError(err.message));
   }, []);
+
+  useEffect(() => {
+    if (vizRef.current) {
+      // przewiń tylko do wykresów kołowych
+      vizRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [currentPage]);
 
   if (error) {
     return <p className="text-red-500 text-center">{error}</p>;
@@ -63,11 +76,44 @@ export default function Page() {
     })
     .sort((a, b) => Number(a.questionId) - Number(b.questionId));
 
+  const totalPages = Math.ceil(merged.length / BATCH_SIZE);
+  const currentQuestions = merged.slice(
+    currentPage * BATCH_SIZE,
+    (currentPage + 1) * BATCH_SIZE
+  );
+
   return (
-    <main className="bg-black min-h-screen text-white py-8 space-y-10">
-      <h1 className="text-3xl font-bold text-center">Statystyki wyników</h1>
-      <PersonalityBarChart data={data.types} />
-      <Visualization data={merged} />
+    <main className="bg-black min-h-screen text-white py-4 px-4 space-y-7">
+      <h1 className="text-3xl font-bold text-center text-blue-600">
+        Statystyki wyników
+      </h1>
+
+      <div>
+        <PersonalityBarChart data={data.types} />
+      </div>
+
+      <div ref={vizRef}>
+        <Visualization data={currentQuestions} />
+        <div className="flex justify-center gap-4 mt-4">
+          <button
+            onClick={() => setCurrentPage((p) => p - 1)}
+            disabled={currentPage === 0}
+            className="px-4 py-2 rounded bg-gray-700 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:cursor-pointer"
+          >
+            Poprzednie
+          </button>
+          <span className="text-white mt-2">
+            Strona {currentPage + 1} z {totalPages}
+          </span>
+          <button
+            onClick={() => setCurrentPage((p) => p + 1)}
+            disabled={currentPage >= totalPages - 1}
+            className="px-4 py-2 rounded bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:cursor-pointer"
+          >
+            Następne
+          </button>
+        </div>
+      </div>
     </main>
   );
 }
