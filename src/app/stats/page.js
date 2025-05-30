@@ -3,20 +3,19 @@
 import { useState, useEffect } from "react";
 import TestQuestions from "../../data/TestQuestions";
 import Visualization from "@/components/Visualization";
+import PersonalityBarChart from "@/components/PersonalityBarChart";
 
 export default function Page() {
-  const [stats, setStats] = useState(null);
+  const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(process.env.NEXT_PUBLIC_BASE_URL + `/api/stats`, {
-      cache: "no-store",
-    })
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/stats`, { cache: "no-store" })
       .then((res) => {
         if (!res.ok) throw new Error("Failed to load stats");
         return res.json();
       })
-      .then(({ data }) => setStats(data))
+      .then(({ data }) => setData(data))
       .catch((err) => setError(err.message));
   }, []);
 
@@ -24,16 +23,14 @@ export default function Page() {
     return <p className="text-red-500 text-center">{error}</p>;
   }
 
-  if (!stats) {
+  if (!data) {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-black text-white z-50">
-        {/* SR-only wrapper keeps the status semantics */}
-        <div role="status">
+        <div role="status" className="flex flex-col items-center gap-3">
           <svg
             aria-hidden="true"
-            className="w-24 h-24 text-gray-400 animate-spin fill-blue-600"
+            className="w-16 h-16 text-gray-400 animate-spin fill-blue-600"
             viewBox="0 0 100 101"
-            fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -45,13 +42,13 @@ export default function Page() {
               fill="currentFill"
             />
           </svg>
-          <span className="sr-only">Loading...</span>
+          <span className="sr-only">Loading…</span>
         </div>
       </div>
     );
   }
 
-  const merged = stats
+  const merged = data.questions
     .map(({ questionId, stats }) => {
       const q = TestQuestions.find((q) => String(q.id) === questionId);
       const statsWithText = stats.map(({ key, percent }) => ({
@@ -67,10 +64,9 @@ export default function Page() {
     .sort((a, b) => Number(a.questionId) - Number(b.questionId));
 
   return (
-    <main className="bg-black min-h-screen text-white py-8">
-      <h1 className="text-3xl font-bold mb-6 text-center">
-        Statystyki wyników
-      </h1>
+    <main className="bg-black min-h-screen text-white py-8 space-y-10">
+      <h1 className="text-3xl font-bold text-center">Statystyki wyników</h1>
+      <PersonalityBarChart data={data.types} />
       <Visualization data={merged} />
     </main>
   );
