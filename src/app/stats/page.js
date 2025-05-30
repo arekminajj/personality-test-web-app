@@ -11,7 +11,7 @@ export default function Page() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
-  const vizRef = useRef(null); // 👈 odwołanie do sekcji wykresów kołowych
+  const vizRef = useRef(null);
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/stats`, {
@@ -27,7 +27,6 @@ export default function Page() {
 
   useEffect(() => {
     if (vizRef.current) {
-      // przewiń tylko do wykresów kołowych
       vizRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [currentPage]);
@@ -94,16 +93,16 @@ export default function Page() {
 
       <div ref={vizRef}>
         <Visualization data={currentQuestions} />
-        <div className="flex items-center justify-center gap-6 mt-4">
+        <div className="flex flex-wrap sm:flex-nowrap items-center justify-center gap-3 sm:gap-6 mt-4 text-center">
           <button
             onClick={() => setCurrentPage((p) => p - 1)}
             disabled={currentPage === 0}
             className={`px-4 py-2 rounded bg-gray-700 text-white transition 
-      ${
-        currentPage === 0
-          ? "opacity-50 cursor-not-allowed"
-          : "hover:cursor-pointer"
-      }`}
+            ${
+              currentPage === 0
+                ? "opacity-50 cursor-not-allowed"
+                : "hover:cursor-pointer"
+            }`}
           >
             Poprzednie
           </button>
@@ -116,11 +115,11 @@ export default function Page() {
             onClick={() => setCurrentPage((p) => p + 1)}
             disabled={currentPage >= totalPages - 1}
             className={`px-4 py-2 rounded bg-blue-600 text-white transition 
-      ${
-        currentPage >= totalPages - 1
-          ? "opacity-50 cursor-not-allowed"
-          : "hover:bg-blue-700 hover:cursor-pointer"
-      }`}
+            ${
+              currentPage >= totalPages - 1
+                ? "opacity-50 cursor-not-allowed"
+                : "hover:bg-blue-700 hover:cursor-pointer"
+            }`}
           >
             Następne
           </button>
