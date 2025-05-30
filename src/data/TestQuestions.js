@@ -3,14 +3,8 @@ const TestQuestions = [
     id: 1,
     question: "Na imprezie zwykle:",
     answers: {
-      a: {
-        text: "Nawiązujesz kontakty z wieloma osobami, nawet nieznajomymi",
-        type: "E",
-      },
-      b: {
-        text: "Nawiązujesz kontakty z nielicznymi, znanymi ci osobami",
-        type: "I",
-      },
+      a: { text: "Nawiązujesz kontakty z wieloma osobami, nawet nieznajomymi", type: "E" },
+      b: { text: "Nawiązujesz kontakty z nielicznymi, znanymi ci osobami", type: "I" },
     },
   },
   {
